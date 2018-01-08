@@ -1,0 +1,22 @@
+{
+  "name": "expresshomework",
+  "version": "1.0.0",
+  "description": "# Welcome to your weekend homework!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/njang/GA-w04d05-homework.git"
+  },
+  "author": "Neo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/njang/GA-w04d05-homework/issues"
+  },
+  "homepage": "https://github.com/njang/GA-w04d05-homework#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
