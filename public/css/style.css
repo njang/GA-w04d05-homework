@@ -3,8 +3,11 @@ content {
 	top: 40vh;
 	bottom: 40vh;
 	height: 20vh;
-	left: 10vw;
-	right: 10vw;
-	width: 80vw;
-	font-size: 48px;
+	left: 30vw;
+	right: 30vw;
+	width: 40vw;
+	font-size: 4vh;
+	padding: 6vh;
+	border: solid white;
+	border-radius: 2vh;
 }
