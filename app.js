@@ -9,6 +9,9 @@ app.get('/kittens', (req, res) => res.send('Hello Kittens!'))
 // Middleware serving static assets
 app.use(express.static('public'))
 
+// Middleware morgan enabled here
+app.use(morgan('tiny'))
+
 // Handle Cross-origin request (CORS)
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
