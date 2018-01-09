@@ -1,0 +1,10 @@
+content {
+	position: absolute;
+	top: 40vh;
+	bottom: 40vh;
+	height: 20vh;
+	left: 10vw;
+	right: 10vw;
+	width: 80vw;
+	font-size: 48px;
+}
