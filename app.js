@@ -7,8 +7,6 @@ app.use(express.static('public'))
 app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/kittens', (req, res) => res.send('Hello Kittens!'))
 
-
-
 // Handle Cross-origin request (CORS)
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
