@@ -1,11 +1,13 @@
 const express = require('express');
+const morgan  = require('morgan');
 const app = express();
 
-// Middleware serving static assets
-app.use(express.static('public'))
 
 app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/kittens', (req, res) => res.send('Hello Kittens!'))
+
+// Middleware serving static assets
+app.use(express.static('public'))
 
 // Handle Cross-origin request (CORS)
 app.use(function(req, res, next) {
