@@ -1,40 +1,30 @@
-/* setting up express */
 const express = require('express');
-const logger = require('morgan');
-const path = require('path');
 const app = express();
 
-/* importing routes */
-const quoteRoutes = require('./routes/quotes');
+// Middleware serving static assets
+app.use(express.static('public'))
 
-/* setting up port & listen */
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, function() {
-  console.log(`listening on port ${PORT}`);
+app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/kittens', (req, res) => res.send('Hello Kittens!'))
+
+
+
+// Handle Cross-origin request (CORS)
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
 });
 
-/* setting up views */
-app.set('views', './views');
-app.set('view engine', 'ejs');
-
-/* setting static file */
-app.use('/static', express.static(path.join(__dirname, 'public')));
-/* setting up logging */
-app.use(logger('dev'));
-
-/* setting routes */
-app.get('/', function(req, res) {
-  res.render('index', {
-    message: 'Hello World!',
-    documentTitle: 'Ada quotes!!',
-    subTitle: 'Read some of the coolest quotes around.',
-    showMore: true,
-    quoteAuthors: ['Unknown', 'Yoda', 'CS Lewis', 'Frank Chimero', 'Pablo Picasso', 'Italo Calvino', 'T. S. Eliot', 'Samuel Beckett', 'Hunter S. Thompson'],
-  });
+app.get('/', function(req, res, next) {
+  // Handle the get for this route
 });
-app.use('/quotes', quoteRoutes);
 
-/* handling 404 */
-app.get('*', function(req, res) {
-  res.status(404).send({message: 'Oops! Not found.'});
+app.post('/', function(req, res, next) {
+ // Handle the post for this route
+});
+
+// Listening on port 3000. Node will display the following message if the server is running.
+app.listen(3000, ()=>{
+    console.log("I am listening");
 });
